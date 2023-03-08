@@ -32,16 +32,18 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Hero(
-                tag: 'logo',
-                child: SizedBox(
-                  height: 100.0,
-                  child: Image.asset('images/logo.png'),
+              Flexible(
+                child: Hero(
+                  tag: 'logo',
+                  child: SizedBox(
+                    height: 200.0,
+                    child: Image.asset('images/logo.png'),
+                  ),
                 ),
               ),
-              // SizedBox(
-              //   height: 48.0,
-              // ),
+              SizedBox(
+                height: 48.0,
+              ),
               TextField(
                   keyboardType: TextInputType.emailAddress,
                 style: TextStyle(
@@ -78,7 +80,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   try{
                     final userLogin = await _auth.signInWithEmailAndPassword(email: email, password: password);
                     if(userLogin != null) {
-                      Navigator.pushNamed(context, ChatScreen.id);
+                      Navigator.pushNamedAndRemoveUntil(context, ChatScreen.id,
+                              (Route<dynamic> route) => false);
                     }
                   }catch(e){
                     print(e);

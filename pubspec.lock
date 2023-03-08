@@ -301,6 +301,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.4.16"
+  time_formatter:
+    dependency: "direct main"
+    description:
+      name: time_formatter
+      sha256: "5e93d47f755aa92b1769933a4fd170327b00850963a6c403548bdd502ec85bf0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0+5"
   timeago:
     dependency: "direct main"
     description:
@@ -326,5 +334,5 @@ packages:
     source: hosted
     version: "2.1.4"
 sdks:
-  dart: ">=2.19.2 <3.0.0"
+  dart: ">=2.18.0 <3.0.0"
   flutter: ">=1.22.0"
